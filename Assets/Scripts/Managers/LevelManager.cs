@@ -2,31 +2,20 @@ using UnityEngine;
 
 public static class LevelManager
 {
-    private static int _SelectedLevel = 1;
+    private static int _selectedLevel = 1;
     private static int _maxLevelReached = 1;
 
     public static int MaxLevelAvailable = 3;
+
     public static int SelectedLevel
     {
-        get
-        {
-            return SelectedLevel;
-        }
-        set
-        {
-            SelectedLevel = Mathf.Clamp(value, 1, MaxLevelReached);
-        }
+        get => _selectedLevel;
+        set => _selectedLevel = Mathf.Clamp(value, 1, _maxLevelReached);
     }
 
     public static int MaxLevelReached
     {
-        get
-        {
-            return MaxLevelReached;
-        }
-        set
-        {
-            MaxLevelReached = Mathf.Max(MaxLevelReached, value, MaxLevelAvailable);
-        }
+        get => _maxLevelReached;
+        set => _maxLevelReached = Mathf.Clamp(value, 1, MaxLevelAvailable);
     }
 }

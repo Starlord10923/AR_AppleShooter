@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BulletScript : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     private void Start()
     {
@@ -12,7 +12,7 @@ public class BulletScript : MonoBehaviour
         if (col.collider.CompareTag("Target"))
         {
             Destroy(col.gameObject);
-            FindObjectOfType<XPManager>().AddXP(1);
+            GameManager.Instance.xpManager.AddXP(10);
         }
 
         Destroy(gameObject);

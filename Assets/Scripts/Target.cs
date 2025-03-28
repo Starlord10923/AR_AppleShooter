@@ -4,6 +4,6 @@ public class Target : MonoBehaviour
 {
     void Start()
     {
-        gameObject.tag = "Apple";
+        gameObject.tag = "Target";
     }
 }

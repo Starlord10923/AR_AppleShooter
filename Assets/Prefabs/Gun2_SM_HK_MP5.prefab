@@ -278,5 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8319126973071667009, guid: 887179f2bbfa112449fdc0aff92ecaf3,
     type: 3}
+  muzzleFlashPrefab: {fileID: 3335579097338550223, guid: 78d98887193a771468390fc0d7decbbd,
+    type: 3}
   firePoint: {fileID: 6377393974176165247}
   shootForce: 40

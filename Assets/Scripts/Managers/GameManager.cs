@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
     private Gun activeGun;
+    public bool isGameOver = false;
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        isGameOver = false;
         int level = LevelManager.SelectedLevel;
         SetupLevel(level);
     }
@@ -43,11 +45,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void PositionApples(Transform character, float distance)
+    void PositionApples(Transform character, float minDistance = 2f, float maxDistance = 3f)
     {
         for (int i = 0; i < 3; i++)
         {
-            Vector3 pos = character.position + Quaternion.Euler(0, i * 120f, 0) * (character.forward * distance);
+            float angle = Random.Range(0f, 360f);
+            float distance = Random.Range(minDistance, maxDistance);
+
+            Vector3 offset = Quaternion.Euler(0, angle, 0) * (Vector3.forward * distance);
+            Vector3 pos = character.position + offset;
+
+            // Keep apples at character's Y level
+            pos.y = character.position.y;
+
             Instantiate(applePrefabs[Random.Range(0, applePrefabs.Count)], pos, Quaternion.identity);
         }
     }
@@ -74,6 +84,12 @@ public class GameManager : MonoBehaviour
 
     public void ShootGun()
     {
-        activeGun.Shoot();        
+        if (isGameOver) return;
+        activeGun.Shoot();
+    }
+
+    public void GameOver()
+    {
+        isGameOver = true;
     }
 }

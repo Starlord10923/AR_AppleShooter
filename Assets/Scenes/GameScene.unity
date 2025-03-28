@@ -1382,11 +1382,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gun2_SM_HK_MP5
       objectReference: {fileID: 0}
-    - target: {fileID: 6353313051580927711, guid: 2729714a546d19f428ce73bc912986e0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1841,11 +1836,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Gun3_SM_Ak47
-      objectReference: {fileID: 0}
-    - target: {fileID: 2144652571498432622, guid: 965a3e0721a11304a96e70b0f3b93552,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6328509301501177249, guid: 965a3e0721a11304a96e70b0f3b93552,
         type: 3}

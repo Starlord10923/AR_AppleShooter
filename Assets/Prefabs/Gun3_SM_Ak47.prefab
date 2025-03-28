@@ -167,7 +167,7 @@ MonoBehaviour:
   muzzleFlashPrefab: {fileID: 3335579097338550223, guid: 78d98887193a771468390fc0d7decbbd,
     type: 3}
   firePoint: {fileID: 5447175485174417056}
-  shootForce: 55
+  shootForce: 30
 --- !u!1 &7667473913309680865
 GameObject:
   m_ObjectHideFlags: 0

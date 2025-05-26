@@ -278,7 +278,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3293855761922934883, guid: 3beed436f42fc554981f1e7f37efcd09,
     type: 3}
+  hitEffectPrefab: {fileID: 3923681954884686010, guid: 2e1b8ee3eefa4564db8a4bbe0b79b823,
+    type: 3}
   muzzleFlashPrefab: {fileID: 3335579097338550223, guid: 78d98887193a771468390fc0d7decbbd,
     type: 3}
   firePoint: {fileID: 619942835394867373}
   shootForce: 15
+  raycastRange: 20
+  crosshairUI: {fileID: 0}

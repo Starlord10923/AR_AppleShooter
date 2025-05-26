@@ -53,16 +53,18 @@ public class GameManager : MonoBehaviour
     }
     void PositionApples(Transform character, float minDistance = 4f, float maxDistance = 6f)
     {
-        totalApples = 3 + LevelManager.SelectedLevel * 2;
+        int totalHumans = 3 + LevelManager.SelectedLevel * 2;
         Transform playerTransform = Camera.main.transform;
 
         // Use a forward-facing arc (e.g., 60° to 120° in front of player)
         float arcStart = -60f;
         float arcEnd = 60f;
 
-        for (int i = 0; i < totalApples; i++)
+        totalApples = totalHumans * 3;
+
+        for (int i = 0; i < totalHumans; i++)
         {
-            float angleInArc = Mathf.Lerp(arcStart, arcEnd, i / (float)(totalApples - 1));
+            float angleInArc = Mathf.Lerp(arcStart, arcEnd, i / (float)(totalHumans - 1));
             angleInArc += Random.Range(-5f, 5f); // add spread variance
 
             // Generate position in world space relative to player's forward
@@ -134,7 +136,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isGameOver = true;
-        gameWinPanel.SetActive(true);
+        gameOverPanel.SetActive(true);
         Debug.Log("Game Lost — Shot a human!");
     }
 

@@ -3,6 +3,7 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public GameObject bulletPrefab;
+    public GameObject hitEffectPrefab;
     public GameObject muzzleFlashPrefab;
     public Transform firePoint;
     public float shootForce = 30f;
@@ -57,8 +58,16 @@ public class Gun : MonoBehaviour
             else if (hit.collider.CompareTag("Human"))
             {
                 Debug.Log("Hit Human!");
-                GameManager.Instance.GameWin();
-                // Optionally: apply feedback on the Human object
+                if (hit.collider.TryGetComponent<Human>(out var human))
+                {
+                    human.OnHit();
+                }
+                else
+                {
+                    Debug.LogError("Hit Human but no Human component found! : " + hit.collider.name);
+                }
+                GameObject hitEffect = Instantiate(hitEffectPrefab,hit.point,Quaternion.LookRotation(hit.normal));
+                Destroy(hitEffect, 1.5f);
             }
         }
         else

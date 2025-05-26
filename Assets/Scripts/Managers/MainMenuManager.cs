@@ -11,7 +11,8 @@ public class MainMenuManager : MonoBehaviour
         int levelReached = PlayerPrefs.GetInt("levelReached", 1);
         for (int i = 0; i < levelButtons.Count; i++)
         {
-            levelButtons[i].interactable = i + 1 <= levelReached;
+            // levelButtons[i].interactable = i + 1 <= levelReached;
+            levelButtons[i].interactable = true;
         }
     }
 
